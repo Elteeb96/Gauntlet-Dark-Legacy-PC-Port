@@ -11,7 +11,7 @@
 
 namespace gdl::game {
 namespace {
-constexpr int cursorScaleSteps = 20;
+constexpr int kCursorScaleSteps = 13;
 constexpr s32 kGraphicsCode = 4;
 constexpr s32 kLanguageCode = 5;
 constexpr s32 kAggressorModeCode = 6;
@@ -114,11 +114,11 @@ std::vector<Extent2D> SettingsMenu::resolutions() const {
     return result;
 }
 
-std::array<f32, cursorScaleSteps> SettingsMenu::cursorScales() {
-    std::array<f32, cursorScaleSteps> result{};
-    for (int i = 0; i < cursorScaleSteps; ++i) {
-        result[i] = ((3 / cursorScaleSteps) * i + 1);
-    }
+std::array<f32, kCursorScaleSteps> SettingsMenu::cursorScales() {
+    std::array<f32, kCursorScaleSteps> result{.05, .25, .5, .75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3 };
+    //for (f32 i = 0; i < kCursorScaleSteps; ++i) {
+    //    result[static_cast<int>(i)] = ((3.0f / static_cast<f32>(kCursorScaleSteps)) * (i + 1.0f));
+    //}
     return result;
 }
 

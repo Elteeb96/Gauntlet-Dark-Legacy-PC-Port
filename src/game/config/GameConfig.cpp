@@ -174,7 +174,7 @@ void GameConfig::mergeJson(std::string_view json) {
             }
         }
         readFrameRate(d, "maxFrameRate", display.maxFrameRate);
-        read(d, "cursorSize", display.cursorScale);
+        read(d, "cursorScale", display.cursorScale);
     }
     if (root.contains("timing")) {
         const Json& t = root.at("timing");
