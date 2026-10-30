@@ -73,7 +73,7 @@ void Gauntlet::onInit() {
     // A saved exclusive resolution may no longer exist after moving displays.
     m_config.display.windowMode = window().windowMode();
     applyWindowIcon();
-    if (const auto cursor = GameCursor::load(m_options.unpackedDirectory)) {
+    if (const auto cursor = GameCursor::load(m_options.unpackedDirectory, m_config.display.cursorScale)) {
         if (!window().setCursor(cursor->image, cursor->hotX, cursor->hotY)) {
             log::warn("Custom mouse cursor unavailable; retaining the system pointer");
         }
